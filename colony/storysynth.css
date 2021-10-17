@@ -1,9 +1,53 @@
 <style>
+body {
+  --text-primary: #EEE;
+  --text-secondary: #AAA;
+  --bg-primary: #000;
+}
+
+/* Colors */
+#app { background-color: var(--bg-primary); }
+.game-meta h1 { color: var(--text-secondary); }
+
+
+/* Mobile Layout */
+@media screen and (min-width: 751px) {
+  #app { padding-top: 0 }
+  .navbar { display: none }
+  .game-room > div > .game-meta {
+    display: block !important;
+    margin-bottom: 0 !important;
+  }
+  .game-meta h1 {
+    text-align: left;
+    font-size: 14px;
+    padding: 5px 0 0 10px;
+    font-weight: 700;
+  }
+  .game-meta h4 { display: none; }
+  .non-footer-content,
+  .game-room,
+  .full-page-background { height: 100vh !important; }
+
+  footer .footer-text {
+    font-size: 12px;
+  }
+}
+
 #app.style-template-undefined {}
 .navbar {}
 .non-footer-content {}
 .roomLink-section {}
-.game-room.container.shuffled {}
+/* Restyle basic cards to full width for mobile */
+.game-room.container.shuffled {
+  padding: 0;
+}
+/* add margin back for top and bottom buttons. These both need a class */
+.game-room .btn-group.col-sm,
+.game-room .btn-container {
+  margin: 0 10px;
+}
+
 .full-page-background {}
 .full-page-background > div {}
 .game-meta {}
