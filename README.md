@@ -1,0 +1,2 @@
+# storysynth
+Storysynth Game Assets
