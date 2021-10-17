@@ -1,0 +1,50 @@
+<style>
+  @keyframes textFade {
+    0%   { opacity:0; }
+    50%  { opacity:1; }
+    100% { opacity:0; }
+  }
+  .animate {
+      animation: textFade 10s;
+      animation-iteration-count: 1;
+  }
+  .typewriter {
+    font-family: Courier, monospace;
+    display: inline-block;
+  }
+
+  .typewriter-text {
+      display: inline-block;
+      overflow: hidden;
+      letter-spacing: 2px;
+    animation: typing 5s steps(30, end), blink .75s step-end infinite;
+      white-space: nowrap;
+      font-size: 30px;
+      font-weight: 700;
+      border-right: 4px solid orange;
+      box-sizing: border-box;
+  }
+
+  @keyframes typing {
+      from {
+          width: 0%
+      }
+      to {
+          width: 100%
+      }
+  }
+
+  @keyframes blink {
+      from, to {
+          border-color: transparent
+      }
+      50% {
+          border-color: orange;
+      }
+  }
+</style>
+
+<div class="animate">Act 1: Departure</div>
+<div class="typewriter">
+    <div class="typewriter-text">May 23, 2189 08:00</div>
+</div>
