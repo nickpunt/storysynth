@@ -13,6 +13,8 @@
     --button-text: #AAA;
     --button-bg: hsla(0, 0%, 25%, 0.5);
     --button-border: transparent;
+    --planet-type: #B2FFE0;
+    --bg-tag: hsla(0, 0%, 67%, 0.8);
     background-color: var(--bg-primary);
     padding:
       env(safe-area-inset-top, 20px)
@@ -38,9 +40,41 @@
   }
   .planet-info {
     position: absolute;
-    top: 0;
-    right: 0;
-    text-align: right;
+    bottom: 50vh;
+    left: 0;
+    text-align: left;
+    padding: 0 40px 0 10px;
+    line-height: 1;
+  }
+  .planet-name {
+    font-size: 40px;
+    font-weight: 900;
+    text-shadow: 0 1px 0 hsla(0, 0%, 0%, 0.2);
+  }
+  .planet-type {
+    font-size: 26px;
+    font-weight: 700;
+    text-shadow: 0 1px 0 hsla(0, 0%, 0%, 0.2);
+    color: var(--planet-type);
+    margin-bottom: 10px;
+  }
+  .planet-desc {
+    font-size: 20px;
+    font-weight: 400;
+    text-shadow: 0 1px 0 hsla(0, 0%, 0%, 0.2);
+    margin-bottom: 10px;
+    line-height: 1.1;
+  }
+  .planet-stats {
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .stat-tag {
+    border-radius: 5px;
+    margin: 0 5px 5px 0;
+    background-color: var(--bg-tag);
+    padding: 5px 8px;
+    display: inline-block;
   }
   /***************** MOBILE LAYOUT (Generic) **********************/
 
@@ -183,9 +217,9 @@
       position: relative;
       width: 100vw;
       height: 100vh;
-      font-family: "Freight Sans",'Proxima Nova',proxima-nova,sans-serif;
+      font-family: sans-serif;
     }
-
+    /* font-family: "Freight Sans",'Proxima Nova',proxima-nova,sans-serif; */
     /* Turned off for now
     .game-meta {
       display: none;
@@ -202,7 +236,11 @@
     */
 
     .game-room,
-    .full-page-background { height: 100vh !important; }
+    .full-page-background {
+      width: 100vw !important;
+      height: 100vh !important;
+      padding: 0 !important;
+    }
     .card-body {
       margin: 0 !important;
       align-items: start !important;
