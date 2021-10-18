@@ -11,7 +11,7 @@
     --button-width: 40px;
     --button-border-radius: 20px;
     --button-text: #AAA;
-    --button-bg: hsla(0, 0%, 25%, 0.5);
+    --button-bg: hsla(0, 0%, 25%, 0.6);
     --button-border: transparent;
     --planet-type: #B2FFE0;
     --bg-tag: hsla(0, 0%, 67%, 0.8);
@@ -23,7 +23,7 @@
   #app { background-color: var(--bg-primary); }
   .game-title { color: var(--text-secondary); }
   .full-page-background {
-    background-image: url('https://raw.githubusercontent.com/nickpunt/storysynth/main/colony/telescope.jpg');
+    background-image: url('https://raw.githubusercontent.com/nickpunt/storysynth/main/colony/telescope.jpg?raw=true');
     background-position: 0 0;
     background-repeat: no-repeat;
     background-size: cover;
@@ -32,6 +32,13 @@
   .card-body {
     color: var(--text-primary);
     background-color: var(--bg-card);
+  }
+  .ship-background {
+    background-image: url('https://raw.githubusercontent.com/nickpunt/storysynth/main/colony/ship.jpg?raw=true');
+    height: 100vh;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
   }
   .planet {
     height: 100vh;
@@ -45,7 +52,7 @@
   .planet-type-m,
   .planet-type-k,
   .planet-type-g,
-  .planet-type-l { background-image: url('https://raw.githubusercontent.com/nickpunt/storysynth/main/colony/planet.png'); }
+  .planet-type-l { background-image: url('https://raw.githubusercontent.com/nickpunt/storysynth/main/colony/planet.png?raw=true'); }
   .planet-info {
     margin: auto 0;
     padding: 70px 40px 0 10px;
@@ -127,8 +134,8 @@
   /* add some shade over image */
   .on-ship-content {
     height: 100vh;
-    width: 100vw;
     background-color: hsla(0, 0%, 0%, 0.3);
+    padding-top: 40px;
   }
   .card-heading {
     font-size: 26px;
@@ -151,8 +158,9 @@
     border-radius: 20px;
     height: 40px;
     margin: 0 20px;
+    padding: 4px 0;
     background-color: var(--button-bg);
-    color: var(--button-text);
+    color: var(--text-primary);
     font-size: 18px;
   }
   /***************** MOBILE LAYOUT (Generic) **********************/
@@ -217,7 +225,7 @@
       height: var(--button-height);
       border-radius: var(--button-border-radius) !important;
       overflow: hidden;
-      background-image: url("data:image/svg+xml,%3Csvg width='21' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m2.972 3.4 3.106 2.544c-.91 1.124-1.392 2.463-1.392 3.882a6.159 6.159 0 0 0 12.316 0 6.108 6.108 0 0 0-1.366-3.855l3.106-2.544a10.107 10.107 0 0 1 2.276 6.399C21.018 15.448 16.44 20 10.844 20 5.248 20 .67 15.448.67 9.826c0-2.33.83-4.605 2.302-6.426Zm9.88-3.4v8.621H8.836V0h4.016Z' fill='%237B7B7B' fill-rule='nonzero'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg width='21' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m2.972 3.4 3.106 2.544c-.91 1.124-1.392 2.463-1.392 3.882a6.159 6.159 0 0 0 12.316 0 6.108 6.108 0 0 0-1.366-3.855l3.106-2.544a10.107 10.107 0 0 1 2.276 6.399C21.018 15.448 16.44 20 10.844 20 5.248 20 .67 15.448.67 9.826c0-2.33.83-4.605 2.302-6.426Zm9.88-3.4v8.621H8.836V0h4.016Z' fill='%23AAAAAA' fill-rule='nonzero'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: center center;
       box-shadow: unset !important;
@@ -236,7 +244,7 @@
       border-radius: var(--button-border-radius) !important;
       margin-left: 10px !important;
       overflow: hidden;
-      background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.15 0 20 5.875v8.25L14.15 20H5.9L0 14.125v-8.25L5.9 0h8.25Zm-.604 3.75c-1.185 1.168-2.37 2.353-3.554 3.538A353.59 353.59 0 0 0 6.454 3.75L3.75 6.454a353.59 353.59 0 0 0 3.538 3.538c-1.185 1.185-2.37 2.37-3.538 3.554l2.704 2.704c1.185-1.185 2.37-2.353 3.538-3.538 1.185 1.185 2.37 2.353 3.554 3.538l2.704-2.704c-1.185-1.185-2.353-2.37-3.538-3.554 1.185-1.169 2.353-2.353 3.538-3.538L13.546 3.75Z' fill='%237B7B7B' fill-rule='nonzero'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.15 0 20 5.875v8.25L14.15 20H5.9L0 14.125v-8.25L5.9 0h8.25Zm-.604 3.75c-1.185 1.168-2.37 2.353-3.554 3.538A353.59 353.59 0 0 0 6.454 3.75L3.75 6.454a353.59 353.59 0 0 0 3.538 3.538c-1.185 1.185-2.37 2.37-3.538 3.554l2.704 2.704c1.185-1.185 2.37-2.353 3.538-3.538 1.185 1.185 2.37 2.353 3.554 3.538l2.704-2.704c-1.185-1.185-2.353-2.37-3.538-3.554 1.185-1.169 2.353-2.353 3.538-3.538L13.546 3.75Z' fill='%23AAAAAA' fill-rule='nonzero'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: center center;
       box-shadow: unset !important;
@@ -254,7 +262,7 @@
       border-radius: var(--button-border-radius) !important;
       margin-left: 10px !important;
       overflow: hidden;
-      background-image: url("data:image/svg+xml,%3Csvg width='18' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.488 15h-12V0h12v15Zm1-10v11h-8v4h12V5h-4Z' fill='%237B7B7B' fill-rule='nonzero'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg width='18' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.488 15h-12V0h12v15Zm1-10v11h-8v4h12V5h-4Z' fill='%23AAAAAA' fill-rule='nonzero'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: center center;
       box-shadow: unset !important;
@@ -270,7 +278,7 @@
       border-radius: var(--button-border-radius) !important;
       margin-left: 10px !important;
       overflow: hidden;
-      background-image: url("data:image/svg+xml,%3Csvg width='12' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 8.379 0l2.871 2.417-6.367 7.603 6.367 7.582L8.379 20C5.593 16.661 2.766 13.356 0 10Z' fill='%237B7B7B' fill-rule='nonzero'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 8.379 0l2.871 2.417-6.367 7.603 6.367 7.582L8.379 20C5.593 16.661 2.766 13.356 0 10Z' fill='%23AAAAAA' fill-rule='nonzero'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: center center;
     }
@@ -281,7 +289,7 @@
       border-radius: var(--button-border-radius) !important;
       margin-left: 10px !important;
       overflow: hidden;
-      background-image: url("data:image/svg+xml,%3Csvg width='11' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.25 10 2.871 0 0 2.417l6.367 7.603L0 17.602 2.871 20c2.786-3.339 5.613-6.644 8.379-10Z' fill='%237B7B7B' fill-rule='nonzero'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg width='11' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.25 10 2.871 0 0 2.417l6.367 7.603L0 17.602 2.871 20c2.786-3.339 5.613-6.644 8.379-10Z' fill='%23AAAAAA' fill-rule='nonzero'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: center center;
     }
