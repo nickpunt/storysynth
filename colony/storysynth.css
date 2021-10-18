@@ -38,13 +38,24 @@
     color: var(--text-primary);
     background-color: var(--bg-card);
   }
+  .planet {
+    height: 100vh;
+    width: 100vw;
+    background-position: right 4%;
+    background-repeat: no-repeat;
+    background-size: 65% auto;
+    display: flex;
+  }
+  .planet-type-o { background-image: url('https://raw.githubusercontent.com/nickpunt/storysynth/main/colony/planet.png'); }
+
   .planet-info {
-    position: absolute;
-    bottom: 50vh;
-    left: 0;
-    text-align: left;
-    padding: 0 40px 0 10px;
+    margin: auto 0;
+    padding: 70px 40px 0 10px;
     line-height: 1;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
   }
   .planet-name {
     font-size: 40px;
