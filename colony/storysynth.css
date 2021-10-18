@@ -1,61 +1,134 @@
 <style>
-body {
-  --text-primary: #EEE;
-  --text-secondary: #AAA;
-  --bg-primary: #000;
-}
+  body {
+    --text-primary: #EEE;
+    --text-secondary: #AAA;
+    --bg-primary: #000;
+    --bg-card: transparent;
+    --margins-half: 5px;
+    --margins: 10px;
+    --margins-2x: 20px;
+    background-color: var(--bg-primary);
+    padding:
+      env(safe-area-inset-top, 20px)
+      env(safe-area-inset-right, 20px)
+      env(safe-area-inset-bottom, 20px)
+      env(safe-area-inset-left, 20px);
 
-/* Colors */
-#app { background-color: var(--bg-primary); }
-.game-meta h1 { color: var(--text-secondary); }
-
-
-/* Mobile Layout */
-@media screen and (min-width: 751px) {
-  #app { padding-top: 0 }
-  .navbar { display: none }
-  .game-room > div > .game-meta {
-    display: block !important;
-    margin-bottom: 0 !important;
   }
-  .game-meta h1 {
-    text-align: left;
-    font-size: 14px;
-    padding: 5px 0 0 10px;
-    font-weight: 700;
+
+  /* Colors & Styles for Colony Ship */
+  #app { background-color: var(--bg-primary); }
+  .game-title { color: var(--text-secondary); }
+  .full-page-background {
+    background-image: url('https://raw.githubusercontent.com/nickpunt/storysynth/main/colony/telescope.jpg');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0 !important;
   }
-  .game-meta h4 { display: none; }
-  .non-footer-content,
-  .game-room,
-  .full-page-background { height: 100vh !important; }
-
-  footer .footer-text {
-    font-size: 12px;
+  .card-body {
+    color: var(--text-primary);
+    background-color: var(--bg-card);
   }
-}
 
-#app.style-template-undefined {}
-.navbar {}
-.non-footer-content {}
-.roomLink-section {}
-/* Restyle basic cards to full width for mobile */
-.game-room.container.shuffled {
-  padding: 0;
-}
-/* add margin back for top and bottom buttons. These both need a class */
-.game-room .btn-group.col-sm,
-.game-room .btn-container {
-  margin: 0 10px;
-}
+  /* NEW LAYOUT
+    .navbar
+    .non-footer-content
+      .roomLink-section
+        .game-room
+          .full-page-background
+          .before-game-card
+            .game-meta
+            div > .extension-upper
+            .card-navigation-buttons
+          .game-card
+          .after-game-card
+            .extension-lower (various extensions)
+    footer
+  */
 
-.full-page-background {}
-.full-page-background > div {}
-.game-meta {}
-.card.main-card {}
-.card-body {}
-.card-body > div {}
-.card-body > div > h1 {}
-.card-body > div > p {}
-.btn-container {}
-footer {}
+  /* Mobile Layout (Generic) */
+
+  /* fix safari mobile drag scrolling */
+  body { overflow: hidden; }
+
+  @media screen and (max-width: 751px) {
+    #app { padding-top: 0 }
+    .navbar { display: none }
+    .non-footer-content {
+      padding: 0 !important;
+      height: 100vh !important;
+    }
+    .before-game-card,
+    .after-game-card {
+      position: fixed;
+      margin: 0;
+      width: 100%;
+      z-index: 10;
+    }
+    .before-game-card { top: 0; }
+    /* Means scrolling up (to minimize address bar) will not cause bottom buttons to go into safe area */
+    .after-game-card {
+      bottom: 0;
+      padding-bottom: calc(var(--margins) + env(safe-area-inset-bottom));
+    }
+    .after-game-card .mb-4 { margin-bottom: 0 !important; }
+    /* Buttons;
+    TOOD future standardize:
+    1. 'div' being 'row'
+    2. 'div > btn-group' having 'col-sm' and removing 'd-flex' */
+    .before-game-card > .card-navigation-buttons > .btn-group,
+    .after-game-card > div > .btn-group {
+      margin: 0 var(--margins-half);
+    }
+    /* normally hidden in mobile */
+    #app .main-card {
+      box-shadow: unset !important;
+      background-color: unset !important;
+      z-index: 1;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+    .game-meta {
+      display: block !important;
+      margin: 0 !important;
+    }
+    .game-meta .game-title {
+      text-align: left;
+      font-size: 12px;
+      padding: var(--margins-half);
+      font-weight: 700;
+      margin: 0;
+    }
+    .game-meta h4 { display: none; }
+
+    .game-room,
+    .full-page-background { height: 100vh !important; }
+    .card-body {
+      margin: 60px 0 0 !important;
+      align-items: start !important;
+      padding: 10px;
+    }
+    /* Get rid of Powered by Story Synth */
+    footer { display: none; }
+  }
+
+  #app.style-template-undefined {}
+  .navbar {}
+  .non-footer-content {}
+  .roomLink-section {}
+  /* Restyle basic cards to full width for mobile */
+  .game-room.container.shuffled {
+    padding: 0;
+  }
+
+  .full-page-background {}
+  .full-page-background > div {}
+  .game-meta {}
+  .card.main-card {}
+  .card-body {}
+  .card-body > div {}
+  .card-body > div > h1 {}
+  .card-body > div > p {}
+  .btn-container {}
+  footer {}
 </style>
