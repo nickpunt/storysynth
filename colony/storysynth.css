@@ -33,12 +33,17 @@
     color: var(--text-primary);
     background-color: var(--bg-card);
   }
+  @keyframes bgPan {
+    0%    { background-position-x:left; }
+    100%  { background-position-x:right; }
+  }
   .ship-background {
     background-image: url('https://raw.githubusercontent.com/nickpunt/storysynth/main/colony/ship.jpg?raw=true');
     height: 100vh;
-    background-position: center center;
+    background-position-y: center;
     background-size: cover;
     display: flex;
+    animation: bgPan ease-out 30s;
   }
   .planet {
     height: 100vh;
@@ -130,6 +135,7 @@
     background-size: cover;
     z-index: 0 !important;
     height: 100vh;
+    animation: bgPan linear 90s;
   }
   /* add some shade over image */
   .on-ship-content {
