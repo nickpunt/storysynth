@@ -1,0 +1,91 @@
+<!-- Rotating planet via https://cssdeck.com/labs/3d-revolving-planet-in-pure-css -->
+
+<style>
+/* rotating planet; cant get to work on mobile, f it */
+.planet-background {
+  transform: rotate(27deg);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+  margin-top: -30px;
+  margin-right: -40px;
+}
+.planet-rotating {
+ background-image: url('https://raw.githubusercontent.com/nickpunt/storysynth/main/colony/planet-1.jpg');
+  width: 400px;
+  aspect-ratio: 1 / 1;
+  max-width: 60vw;
+  /* a black shadow from left and white from right */
+  box-shadow: inset 16px 0 40px 3px rgba(0,0,0,0.9),
+    inset -3px 0 5px 2px rgba(255,255,255,0.26);
+  background-size: 600px;
+  border-radius: 50%;
+  position: relative;
+  animation-name: rotate;
+  animation-duration: 180s;
+  animation-iteration-count:infinite;
+  -webkit-animation-timing-function: linear;
+}
+@keyframes rotate {
+  0% { background-position: 0px; }
+  100% { background-position: 600px; }
+}
+</style>
+
+"<div class=""planet"">
+  <div class=""planet-info"">
+    <div class=""planet-name"">Arcturan IV</div>
+    <div class=""planet-type"">Class K: Desert</div>
+    <div class=""planet-desc"">Dune the rotating planet</div>
+    <div class=""planet-stats""><span class=""stat-tag"">Thin Atmosphere</span><span class=""stat-tag"">Low Gravity</span><span class=""stat-tag"">Long Days</span></div>
+  </div>
+  <div class=""planet-background"">
+    <div class=""planet-rotating""></div>
+  </div>
+</div>"
+
+
+<!-- ORIGINAL -->
+
+<!--
+Revolving 3D planet in CSS3 (WIP)
+
+Inspired from works of
+Jack Rugile (http://codepen.io/jackrugile/pen/sadvF)
+and
+Tim Holman (http://cssdeck.com/labs/animated-map-icon)
+
+
+Still needs to be fixed for scaling
+<div class="rotateme">
+  <div id="earth"></div>
+</div>
+
+body { background-color: #111; }
+.rotateme {
+  transform: rotate(27deg);
+}
+#earth {
+ background-image: url('https://encrypted-tbn3.google.com/images?q=tbn:ANd9GcTQqoB4xBnIkmUg5pxDyYW2h0Q1pRTsbQBOfhg-E-y4iLFicsyi');
+  width: 70px;
+  height: 70px;
+  /* a black shadow from left and white from right */
+  box-shadow: inset 16px 0 40px 3px rgba(0,0,0,0.9),
+    inset -3px 0 5px 2px rgba(255,255,255,0.26);
+  background-size: 190px;
+  margin: 80px auto;
+  border-radius: 50%;
+  position: relative;
+  animation-name: rotate;
+  animation-duration: 12s;
+  animation-iteration-count:infinite;
+  -webkit-animation-timing-function: linear;
+}
+
+@keyframes rotate {
+  0% { background-position: 0px; }
+  100% { background-position: 190px; }
+}
+
+-->

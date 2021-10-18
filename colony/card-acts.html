@@ -1,55 +1,71 @@
 <style>
-  @keyframes textFade {
+  /* original one
+  @keyframes actFade {
     0%   { opacity:0; }
     50%  { opacity:1; }
     100% { opacity:0; }
   }
-  .animate {
-      animation: textFade 10s;
-      animation-iteration-count: 1;
+  .act-heading {
+    animation: actFade 10s;
+    animation-iteration-count: 1;
   }
-  .typewriter {
-    font-family: Courier, monospace;
+  .act-desc {
     display: inline-block;
-  }
-
-  .typewriter-text {
-      display: inline-block;
-      overflow: hidden;
-      letter-spacing: 2px;
+    font-family: Courier, monospace;
+    overflow: hidden;
+    letter-spacing: 2px;
     animation: typing 5s steps(30, end), blink .75s step-end infinite;
-      white-space: nowrap;
-      font-size: 30px;
-      font-weight: 700;
-      border-right: 4px solid orange;
-      box-sizing: border-box;
+    white-space: nowrap;
+    font-size: 30px;
+    font-weight: 700;
+    border-right: 4px solid orange;
+    box-sizing: border-box;
   }
-
   @keyframes typing {
-      from {
-          width: 0%
-      }
-      to {
-          width: 100%
-      }
+    from { width: 0% }
+    to { width: 100% }
+  }
+  @keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }*/
+  @keyframes actFade {
+    0%    { opacity:0; }
+    100%  { opacity:1; }
+  }
+  @keyframes typing {
+    0%   { width: 0% }
+    33%   { width: 0% }
+    100% { width: 100% }
+  }
+  @keyframes blink {
+    from, to { border-color: orange }
+    50% { border-color: transparent; }
+  }
+  .act-heading {
+    font-size: 30px;
+    text-align: center;
+    animation: actFade 6s;
+    animation-iteration-count: 1;
+  }
+  .act-desc {
+    display: inline-block;
+    font-family: Courier, monospace;
+    overflow: hidden;
+    letter-spacing: 2px;
+    animation: typing 6s steps(30, end), blink .75s step-end 2s infinite;
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 700;
+    border-right-width: 4px;
+    border-right-style: solid;
+    border-right-color: transparent;
+    box-sizing: border-box;
   }
 
-  @keyframes blink {
-      from, to {
-          border-color: transparent
-      }
-      50% {
-          border-color: orange;
-      }
-  }
 </style>
 
 <div class="animate">Act 1: Departure</div>
 <div class="typewriter">
     <div class="typewriter-text">May 23, 2189 08:00</div>
-</div>
-
-
-<div class="sketchfab-embed-wrapper" style="color:#000!important">
-  <iframe title="A 3D model" width="100%" height="100%" src="https://sketchfab.com/models/0e196e434b134051990f3ea4ae10ad71/embed?autospin=1&autostart=1&camera=0&ui_infos=0&ui_controls=0&ui_stop=0&ui_watermark=0&amp;ui_watermark_link=0" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="false"></iframe>
 </div>

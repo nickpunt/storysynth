@@ -16,11 +16,6 @@
     --planet-type: #B2FFE0;
     --bg-tag: hsla(0, 0%, 67%, 0.8);
     background-color: var(--bg-primary);
-    padding:
-      env(safe-area-inset-top, 20px)
-      env(safe-area-inset-right, 20px)
-      env(safe-area-inset-bottom, 20px)
-      env(safe-area-inset-left, 20px);
 
   }
 
@@ -46,8 +41,11 @@
     background-size: 65% auto;
     display: flex;
   }
-  .planet-type-o { background-image: url('https://raw.githubusercontent.com/nickpunt/storysynth/main/colony/planet.png'); }
-
+  .planet-type-o,
+  .planet-type-m,
+  .planet-type-k,
+  .planet-type-g,
+  .planet-type-l { background-image: url('https://raw.githubusercontent.com/nickpunt/storysynth/main/colony/planet.png'); }
   .planet-info {
     margin: auto 0;
     padding: 70px 40px 0 10px;
@@ -60,19 +58,19 @@
   .planet-name {
     font-size: 40px;
     font-weight: 900;
-    text-shadow: 0 1px 0 hsla(0, 0%, 0%, 0.2);
+    text-shadow: 0 2px 0 hsla(0, 0%, 0%, 1);
   }
   .planet-type {
     font-size: 26px;
     font-weight: 700;
-    text-shadow: 0 1px 0 hsla(0, 0%, 0%, 0.2);
+    text-shadow: 0 2px 0 hsla(0, 0%, 0%, 1);
     color: var(--planet-type);
     margin-bottom: 10px;
   }
   .planet-desc {
     font-size: 20px;
     font-weight: 400;
-    text-shadow: 0 1px 0 hsla(0, 0%, 0%, 0.2);
+    text-shadow: 0 1px 0 hsla(0, 0%, 0%, 1);
     margin-bottom: 10px;
     line-height: 1.1;
   }
@@ -86,6 +84,68 @@
     background-color: var(--bg-tag);
     padding: 5px 8px;
     display: inline-block;
+  }
+  .act {
+    padding-top: 80px;
+  }
+  @keyframes actFade {
+    0%    { opacity:0; }
+    100%  { opacity:1; }
+  }
+  @keyframes typing {
+    0%   { width: 0% }
+    33%   { width: 0% }
+    100% { width: 100% }
+  }
+  .act-heading {
+    font-size: 30px;
+    text-align: center;
+    animation: actFade 6s;
+    animation-iteration-count: 1;
+  }
+  .act-desc {
+    display: inline-block;
+    font-family: Courier, monospace;
+    overflow: hidden;
+    letter-spacing: 2px;
+    animation: typing 6s steps(30, end);
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 700;
+    box-sizing: border-box;
+  }
+  /* source: https://www.reddit.com/r/TheExpanse/comments/7edumc/inside_the_nauvoo_xpost_from_rart/ */
+  .on-ship {
+    background-image: url('https://raw.githubusercontent.com/nickpunt/storysynth/main/colony/on-ship.jpg');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0 !important;
+  }
+  /* add some shade over image */
+  .on-ship-content {
+    height: 100vh;
+    width: 100vw;
+    background-color: hsla(0, 0%, 0%, 0.3);
+  }
+  .card-heading {
+    font-size: 30px;
+    text-align: center;
+    font-weight: 900;
+    text-shadow: 0 2px 0 hsla(0, 0%, 0%, 1);
+  }
+  .ideas {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+  }
+  .idea {
+    border-radius: 20px;
+    height: 40px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    font-size: 18px;
   }
   /***************** MOBILE LAYOUT (Generic) **********************/
 
@@ -228,24 +288,8 @@
       position: relative;
       width: 100vw;
       height: 100vh;
-      font-family: sans-serif;
+      font-family: "Freight Sans",'Proxima Nova',proxima-nova,sans-serif;
     }
-    /* font-family: "Freight Sans",'Proxima Nova',proxima-nova,sans-serif; */
-    /* Turned off for now
-    .game-meta {
-      display: none;
-      margin: 0 !important;
-    }
-    .game-meta .game-title {
-      text-align: left;
-      font-size: 12px;
-      padding: var(--margins-half);
-      font-weight: 700;
-      margin: 0;
-    }
-    .game-meta h4 { display: none; }
-    */
-
     .game-room,
     .full-page-background {
       width: 100vw !important;
@@ -261,10 +305,6 @@
       width: 100vw;
       height: 100vh;
       margin: 0 !important;
-    }
-    .sketchfab-embed-wrapper {
-      width: 100vw;
-      height: 100vh;
     }
     /* Get rid of Powered by Story Synth */
     footer { display: none; }
