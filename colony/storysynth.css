@@ -36,24 +36,13 @@
     color: var(--text-primary);
     background-color: var(--bg-card);
   }
-
-  /* NEW LAYOUT
-    .navbar
-    .non-footer-content
-      .roomLink-section
-        .game-room
-          .full-page-background
-          .before-game-card
-            .game-meta
-            div > .extension-upper
-            .card-navigation-buttons
-          .game-card
-          .after-game-card
-            .extension-lower (various extensions)
-    footer
-  */
-
-  /* Mobile Layout (Generic) */
+  .planet-info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right;
+  }
+  /***************** MOBILE LAYOUT (Generic) **********************/
 
   /* fix safari mobile drag scrolling */
   body { overflow: hidden; }
@@ -70,6 +59,7 @@
       bottom: 0;
       right: 0;
       padding-bottom: calc(var(--margins) + env(safe-area-inset-bottom));
+      z-index: 10;
     }
     .card-navigation-buttons {
       margin-bottom: 0 !important;
@@ -106,29 +96,7 @@
       background-color: var(--button-bg);
       color: var(--button-text);
     }
-    .btn-group button.control-button-previous-card {
-      color: transparent;
-      width: var(--button-width);
-      height: var(--button-height);
-      border-radius: var(--button-border-radius) !important;
-      margin-left: 10px !important;
-      overflow: hidden;
-      background-image: url("data:image/svg+xml,%3Csvg width='12' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 8.379 0l2.871 2.417-6.367 7.603 6.367 7.582L8.379 20C5.593 16.661 2.766 13.356 0 10Z' fill='%237B7B7B' fill-rule='nonzero'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: center center;
-    }
-    .btn-group button.control-button-next-card {
-      color: transparent;
-      width: var(--button-width);
-      height: var(--button-height);
-      border-radius: var(--button-border-radius) !important;
-      margin-left: 10px !important;
-      overflow: hidden;
-      background-image: url("data:image/svg+xml,%3Csvg width='11' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.25 10 2.871 0 0 2.417l6.367 7.603L0 17.602 2.871 20c2.786-3.339 5.613-6.644 8.379-10Z' fill='%237B7B7B' fill-rule='nonzero'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: center center;
-    }
-    /* Reset */
+    /* Reset Button */
     .after-game-card > div > .btn-group > .btn:first-of-type {
       flex-grow: unset;
       color: transparent;
@@ -181,12 +149,40 @@
     .btn-group.control-button-last-card.show > button {
       background-image: url("data:image/svg+xml,%3Csvg width='18' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.488 15h-12V0h12v15Zm1-10v11h-8v4h12V5h-4Z' fill='%23FFFFFF' fill-rule='nonzero'/%3E%3C/svg%3E");
     }
+
+    .btn-group button.control-button-previous-card {
+      color: transparent;
+      width: var(--button-width);
+      height: var(--button-height);
+      border-radius: var(--button-border-radius) !important;
+      margin-left: 10px !important;
+      overflow: hidden;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 8.379 0l2.871 2.417-6.367 7.603 6.367 7.582L8.379 20C5.593 16.661 2.766 13.356 0 10Z' fill='%237B7B7B' fill-rule='nonzero'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    .btn-group button.control-button-next-card {
+      color: transparent;
+      width: var(--button-width);
+      height: var(--button-height);
+      border-radius: var(--button-border-radius) !important;
+      margin-left: 10px !important;
+      overflow: hidden;
+      background-image: url("data:image/svg+xml,%3Csvg width='11' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.25 10 2.871 0 0 2.417l6.367 7.603L0 17.602 2.871 20c2.786-3.339 5.613-6.644 8.379-10Z' fill='%237B7B7B' fill-rule='nonzero'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
     /* normally hidden in mobile */
     #app .main-card {
-      padding-top: 40px;
+      padding: 0 !important;
+      margin: 0 !important;
       box-shadow: unset !important;
       background-color: unset !important;
+      border: 0 !important;
       z-index: 1;
+      position: relative;
+      width: 100vw;
+      height: 100vh;
     }
 
     /* Turned off for now
@@ -209,7 +205,16 @@
     .card-body {
       margin: 0 !important;
       align-items: start !important;
-      padding: 10px;
+      padding: 0 !important;
+    }
+    .card-body > div > p {
+      width: 100vw;
+      height: 100vh;
+      margin: 0 !important;
+    }
+    .sketchfab-embed-wrapper {
+      width: 100vw;
+      height: 100vh;
     }
     /* Get rid of Powered by Story Synth */
     footer { display: none; }
@@ -230,8 +235,6 @@
   .card.main-card {}
   .card-body {}
   .card-body > div {}
-  .card-body > div > h1 {}
-  .card-body > div > p {}
   .btn-container {}
   footer {}
 </style>
