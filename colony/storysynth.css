@@ -116,11 +116,12 @@
   }
   /* source: https://www.reddit.com/r/TheExpanse/comments/7edumc/inside_the_nauvoo_xpost_from_rart/ */
   .on-ship {
-    background-image: url('https://raw.githubusercontent.com/nickpunt/storysynth/main/colony/on-ship.jpg');
-    background-position: 0 0;
+    background-image: url('https://raw.githubusercontent.com/nickpunt/storysynth/main/colony/on-ship.jpg?raw=true');
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 0 !important;
+    height: 100vh;
   }
   /* add some shade over image */
   .on-ship-content {
@@ -129,20 +130,26 @@
     background-color: hsla(0, 0%, 0%, 0.3);
   }
   .card-heading {
-    font-size: 30px;
+    font-size: 26px;
     text-align: center;
     font-weight: 900;
     text-shadow: 0 2px 0 hsla(0, 0%, 0%, 1);
+    margin: 0 20px;
   }
   .ideas {
-    margin-top: 20px;
+    margin: 20px 20px 0;
     display: flex;
     gap: 10px;
     flex-direction: column;
+    align-content: center;
+    align-items: center;
+    flex-grow: 1;
   }
   .idea {
+    width: 100%;
     border-radius: 20px;
     height: 40px;
+    margin: 0 20px;
     background-color: var(--button-bg);
     color: var(--button-text);
     font-size: 18px;
