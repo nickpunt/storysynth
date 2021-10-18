@@ -116,6 +116,7 @@
   }
   /* source: https://www.reddit.com/r/TheExpanse/comments/7edumc/inside_the_nauvoo_xpost_from_rart/ */
   .on-ship {
+    white-space: normal;
     background-image: url('https://raw.githubusercontent.com/nickpunt/storysynth/main/colony/on-ship.jpg?raw=true');
     background-position: center center;
     background-repeat: no-repeat;
@@ -307,6 +308,7 @@
       margin: 0 !important;
       align-items: start !important;
       padding: 0 !important;
+      white-space: normal !important;
     }
     .card-body > div > p {
       width: 100vw;
