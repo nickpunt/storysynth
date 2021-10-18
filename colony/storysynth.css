@@ -183,6 +183,7 @@
       position: relative;
       width: 100vw;
       height: 100vh;
+      font-family: "Freight Sans",'Proxima Nova',proxima-nova,sans-serif;
     }
 
     /* Turned off for now
@@ -219,22 +220,49 @@
     /* Get rid of Powered by Story Synth */
     footer { display: none; }
   }
-
-  #app.style-template-undefined {}
-  .navbar {}
-  .non-footer-content {}
-  .roomLink-section {}
-  /* Restyle basic cards to full width for mobile */
-  .game-room.container.shuffled {
-    padding: 0;
+  @font-face {
+    font-family: "Freight Sans";
+    font-weight: 300;
+    src: url("https://github.com/nickpunt/storysynth/blob/main/colony/freight-sans-light.woff2?raw=true") format("woff2");
+  }
+  @font-face {
+    font-family: "Freight Sans";
+    font-style: italic;
+    font-weight: 300;
+    src: url("https://github.com/nickpunt/storysynth/blob/main/colony/freight-sans-light-italic.woff2?raw=true") format("woff2");
+  }
+  @font-face {
+    font-family: "Freight Sans";
+    font-weight: 400;
+    src: url("https://github.com/nickpunt/storysynth/blob/main/colony/freight-sans-book.woff2?raw=true") format("woff2");
+  }
+  @font-face {
+    font-family: "Freight Sans";
+    font-style: italic;
+    font-weight: 400;
+    src: url("https://github.com/nickpunt/storysynth/blob/main/colony/freight-sans-book-italic.woff2?raw=true") format("woff2");
+  }
+  @font-face {
+    font-family: "Freight Sans";
+    font-weight: 700;
+    src: url("https://github.com/nickpunt/storysynth/blob/main/colony/freight-sans-bold.woff2?raw=true") format("woff2");
+  }
+  @font-face {
+    font-family: "Freight Sans";
+    font-style: italic;
+    font-weight: 700;
+    src: url("https://github.com/nickpunt/storysynth/blob/main/colony/freight-sans-bold-italic.woff2?raw=true") format("woff2");
+  }
+  @font-face {
+    font-family: "Freight Sans";
+    font-weight: 900;
+    src: url("https://github.com/nickpunt/storysynth/blob/main/colony/freight-sans-black.woff2?raw=true") format("woff2");
+  }
+  @font-face {
+    font-family: "Freight Sans";
+    font-style: italic;
+    font-weight: 900;
+    src: url("https://github.com/nickpunt/storysynth/blob/main/colony/freight-sans-black-italic.woff2?raw=true") format("woff2");
   }
 
-  .full-page-background {}
-  .full-page-background > div {}
-  .game-meta {}
-  .card.main-card {}
-  .card-body {}
-  .card-body > div {}
-  .btn-container {}
-  footer {}
 </style>
