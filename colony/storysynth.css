@@ -4,7 +4,6 @@
     --text-secondary: #AAA;
     --bg-primary: #000;
     --bg-card: transparent;
-    --margins-half: 5px;
     --margins: 10px;
     --margins-2x: 20px;
     --button-height: 40px;
@@ -16,8 +15,9 @@
     --planet-type: #B2FFE0;
     --bg-tag: hsla(0, 0%, 67%, 0.8);
     --ss-controls-height: 60px;
+    --menu-bg-color: #222;
+    --menu-border-color: #444;
     background-color: var(--bg-primary);
-
   }
   /******************** TEMPLATES *****************/
   /* DOM:
@@ -208,17 +208,69 @@
       padding-bottom: calc(var(--margins) + env(safe-area-inset-bottom));
       z-index: 10;
     }
-    .card-navigation-buttons {
-      margin-bottom: 0 !important;
+
+    /**************************************************************************/
+    /************************ EXTENSIONS TRAY (TODO) **************************/
+    /************ https://github.com/nickpunt/storysynth/issues/9 *************/
+    /**************************************************************************/
+
+    /* opens tray to reveal extensions; uses solid menu color */
+    .tray-open .after-game-card {
+      height: 65vh !important;
+      background-color: var(--menu-bg-color);
+      border-top: 1px solid var(--menu-border-color);
     }
-    /* Means scrolling up (to minimize address bar) will not cause bottom buttons to go into safe area */
+    .tray-open .after-game-card .lower-buttons {
+      padding-top: calc(var(--margins)/2);
+    }
+    .tray-open .after-game-card .extensions {
+      display: flex;
+    }
+    /* TODO StorySynth option for solid menu (helps with certain backgrounds) */
+    .option-solid-menu .after-game-card {
+      background-color: var(--menu-bg-color);
+      border-top: 1px solid var(--menu-border-color);
+    }
+    /* disables scrolling main content underneath */
+    .tray-open .card-body {
+      position: fixed;
+    }
+    .after-game-card .btn-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      width: 100vw;
+    }
+    /* First div underneath holds all the extensions */
+    .after-game-card .extensions {
+      display: none;
+      flex-direction: column;
+    }
+    .after-game-card .extension {
+      display: flex;
+    }
+
+    /**************************************************************************/
+    /*************************** STORYSYNTH BUTTONS ***************************/
+    /**************************************************************************/
+
     .after-game-card {
       position: fixed;
       bottom: 0;
       left: 0;
       margin: 0;
       z-index: 10;
-      padding-bottom: calc(var(--margins) + env(safe-area-inset-bottom));
+      width: 100vw;
+      padding-bottom: var(--margins));
+      display: flex;
+      flex-direction: column;
+    }
+    @supports (padding-top: env(safe-area-inset-top)) {
+      .after-game-card {
+        padding-bottom: calc(var(--margins) + env(safe-area-inset-bottom));
+      }
     }
     .after-game-card .btn-group {
       height: var(--button-height);
@@ -228,16 +280,10 @@
       line-height: 1.3;
       font-size: 13px;
     }
-    .after-game-card .mb-4 { margin-bottom: 0 !important; }
-    /* Buttons;
-    TOOD future standardize:
-    1. 'div' being 'row'
-    2. 'div > btn-group' having 'col-sm' and removing 'd-flex' */
-    .before-game-card > .card-navigation-buttons > .btn-group,
-    .after-game-card > div > .btn-group {
-      margin: 0 var(--margins-half);
+    .lower-buttons > .btn-group {
+      margin: calc(var(--margins)/2) var(--margins);
     }
-    .btn-group > button.btn {
+    .lower-buttons > .btn-group > button.btn {
       flex-grow: unset;
       color: transparent;
       width: var(--button-width);
@@ -251,13 +297,13 @@
       background-position: center center;
       box-shadow: unset !important;
     }
-    .btn-group > button.btn:first-of-type {
+    .lower-buttons > .btn-group > button.btn:first-of-type {
       margin-left: 0 !important;
     }
-    .btn-group > button.btn:disabled {
+    .lower-buttons > .btn-group > button.btn:disabled {
       opacity: 0.4;
     }
-    .btn-group > button.btn:active {
+    .lower-buttons > .btn-group > button.btn:active {
       color: transparent !important;
     }
     .btn-group button.control-button-restart {
