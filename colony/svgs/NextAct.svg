@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="22px" height="20px" viewBox="0 0 22 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>NextAct</title>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Buttons" transform="translate(-124.000000, 0.000000)" fill="#7B7B7B" fill-rule="nonzero">
-            <path d="M134.871062,0 C137.664125,3.3333125 140.457313,6.6664375 143.25,10 C140.484187,13.3558125 137.657375,16.661125 134.871062,20 L134.871062,20 L132,17.6023125 L138.367188,10.0195 L132,2.4171875 Z M126.871062,0 C129.664125,3.3333125 132.457313,6.6664375 135.25,10 C132.484187,13.3558125 129.657375,16.661125 126.871062,20 L126.871062,20 L124,17.6023125 L130.367188,10.0195 L124,2.4171875 Z" id="NextAct"></path>
+        <g id="Buttons" transform="translate(-122.000000, 0.000000)">
+            <g id="NextAct" transform="translate(122.000000, 0.000000)">
+                <path d="M12.8710625,0 C15.664125,3.3333125 18.4573125,6.6664375 21.25,10 C18.4841875,13.3558125 15.657375,16.661125 12.8710625,20 L12.8710625,20 L10,17.6023125 L16.3671875,10.0195 L10,2.4171875 Z M4.8710625,0 C7.664125,3.3333125 10.4573125,6.6664375 13.25,10 C10.4841875,13.3558125 7.657375,16.661125 4.8710625,20 L4.8710625,20 L2,17.6023125 L8.3671875,10.0195 L2,2.4171875 Z" fill="#AAAAAA" fill-rule="nonzero"></path>
+                <rect id="spacer" x="0" y="0" width="21" height="20"></rect>
+            </g>
         </g>
     </g>
 </svg>
